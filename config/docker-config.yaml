@@ -1,0 +1,10 @@
+server:
+  port: 3000
+
+database:
+  endpoint: "root:password@(db:3306)/test_db?parseTime=True&charset=utf8mb4&loc=Local"
+  pool:
+    maxOpen: 50
+    maxIdle: 5
+    maxLifeTime: 86400
+  createTable: false

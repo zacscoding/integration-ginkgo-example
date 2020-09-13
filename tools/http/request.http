@@ -1,0 +1,28 @@
+###
+### Account api
+
+### Get accounts
+GET http://localhost:3000/v1/accounts
+
+### Get account
+GET http://localhost:3000/v1/account/1
+
+### Post account
+POST http://localhost:3000/v1/account
+Content-Type: application/json
+
+{
+  "username": "user-1",
+  "email": "user1@email.com"
+}
+
+### Update account
+PUT http://localhost:3000/v1/account/1
+Content-Type: application/json
+
+{
+  "username": "updated-user-1"
+}
+
+### Delete account
+DELETE http://localhost:3000/v1/account/1
