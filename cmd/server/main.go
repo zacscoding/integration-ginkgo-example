@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"integration-ginkgo-example/internal/account"
 	accountModel "integration-ginkgo-example/internal/account/model"
 	"integration-ginkgo-example/internal/config"
@@ -37,9 +36,6 @@ func main() {
 	}
 
 	// server
-	e := gin.New()
-	e.Use(gin.Recovery())
-
 	server := &http.Server{
 		Addr:         fmt.Sprintf(":%d", conf.Server.Port),
 		Handler:      account.NewHandler(db),

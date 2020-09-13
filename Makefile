@@ -1,6 +1,6 @@
 MODULE = $(shell go list -m)
 
-.PHONY: build build-docker compose compose-down
+.PHONY: build build-docker compose compose-down test integration
 build: # build a server
 	go build -a -o integration-server $(MODULE)/cmd/server
 
@@ -12,3 +12,9 @@ compose: # run with docker-compose
 
 compose-down: # down docker-compose
 	docker-compose down -v
+
+test:
+	go test ./cmd/... ./internal/... ./pkg/...
+
+integration:
+	go test ./integration -v
